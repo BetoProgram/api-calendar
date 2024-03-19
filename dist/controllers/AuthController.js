@@ -75,6 +75,6 @@ const renew = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const uid = req.uid;
     const name = req.name;
     const token = yield (0, jwt_1.generarJWT)(uid, name);
-    res.json({ token });
+    res.json({ uid, name, token });
 });
 exports.renew = renew;

@@ -75,5 +75,5 @@ export const renew = async (req:any, res:Response) => {
 
     const token = await generarJWT(uid, name);
 
-    res.json({ token });
+    res.json({ uid, name, token });
 }
