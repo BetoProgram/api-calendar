@@ -8,7 +8,7 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const validatJwt = (req, res, next) => {
     const token = req.header('x-token');
     if (!token) {
-        return res.json(401).json({
+        return res.status(401).json({
             message: 'No se a enviado token en la peticion'
         });
     }
@@ -18,7 +18,7 @@ const validatJwt = (req, res, next) => {
         req.name = name;
     }
     catch (error) {
-        return res.json(401).json({
+        return res.status(401).json({
             message: 'Token no valido'
         });
     }
